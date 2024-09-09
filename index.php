@@ -39,35 +39,37 @@
      echo $max." la so lon nhat";
    }
  // in_so_lon_nhat_sua_bai($a=7,$b=10,$c=5);
- //bai1. nhap so n >= 0
-        function bai_1($a){
-            if($a>=0){
-                sqrt($a);
-                echo $a." la can bac 2 cua".sqrt($a);
-            }
-            else{
-                echo " so nay ko phai la so duong";
-            }
+ //bai1. nhap so n. tinh va xuat can bac 2 cua n.
+    function bai_1($a){
+        if($a>=0){
+            sqrt($a);
+            echo $a." la can bac 2 cua ".sqrt($a);
+        }else{
+            echo " so nay ko phai la so duong";
         }
-        bai_1($a=36);
-        //bai4.nhap n, ktra n la so chan hay so le.
-      function bai_4($a){
-        if($a%2==0)
-        echo $a." la so chan";
-    else{
-        echo $a." la so le";
     }
-      }
-      bai_4($a=36);
-      function bai_5($a,$b){
+        
+    //bai_1($a=-1);
+
+    //bai4.nhap n, ktra n la so chan hay so le.
+    function bai_4($a){
+        if($a%2==0)
+            echo $a." la so chan";
+        else
+            echo $a." la so le";
+    }
+      
+    //bai_4($a=0);
+
+    //bai5: nhap 2 so a va b, kiem tra xem cung dau hay khac dau.
+    function bai_5($a,$b){
         if($a*$b>=1)
             echo "a va b cung dau";
-      
-        else{
-          echo  "a va b khac dau";
-      }
+        else
+            echo  "a va b khac dau"; 
     }
-    bai_5($a=12,$b=-7);
+    
+    bai_5($a=7,$b=-7);
       ?>
     <table>
         <tr>
