@@ -69,7 +69,57 @@
             echo  "a va b khac dau"; 
     }
     
-    bai_5($a=7,$b=-7);
+    //bai_5($a=7,$b=-7);
+
+    //dùng vòng lặp for vẽ tam giác
+    function bai_ve_tam_giac($a){
+        for( $i=1;$i<=$a;$i++){
+            for( $n=1;$n<=$i;$n++){
+                echo "*";
+            }
+            echo "<br>";
+        }
+    }
+    
+    //bai_ve_tam_giac($a=5);
+
+    //ve hinh vuong bang vong lap for.
+    function ve_hinh_vuong($a){
+        for($i = 0; $i < $a ;$i++){
+            for($n = 0; $n < $a;$n++){
+                echo "*";
+            }
+           echo "<br>";
+        }
+    }
+
+    //ve_hinh_vuong($a=3);
+
+    //bang cuu chuong
+    function bang_cuu_chuong($a){
+        echo "bảng cửu chương<br> ";
+        if($a>=1){
+            for($i=1;$i<=10;$i++){
+                echo $a." x ".$i." = ".$a*$i;
+                echo "<br>";
+            }
+        }else{
+            echo "số bạn nhập không hợp lệ.";
+        }       
+    }
+
+    bang_cuu_chuong($a=-5);
+    
+    function bai_ve_tam_giac_1($a){
+        for( $i=$a;$i>=1;$i--){
+            for( $n=$i;$n>=1;$n--){
+                echo "*";
+            }
+            echo "<br>";
+        }
+    }
+    //
+    //bai_ve_tam_giac_1($a=5);
       ?>
     <table>
         <tr>
