@@ -123,12 +123,11 @@
 
     function bang_cuu_chuong_2_den_10($a){
        
-        if($a<=10){
+        if($a<=10 && $a >=1){
             for($i=1;$i<=10;$i++){
                 echo "<br>";
                 for($n=1;$n<=$a;$n++){
-                echo $i." X ".$n." = ".$i*$n;
-                echo "<br>";
+                    echo $n." X ".$i." = ".$n*$i." ";
                 }
             }
         }else{
