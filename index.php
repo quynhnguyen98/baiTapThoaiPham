@@ -108,7 +108,7 @@
         }       
     }
 
-    bang_cuu_chuong($a=-5);
+    //bang_cuu_chuong($a=-5);
     
     function bai_ve_tam_giac_1($a){
         for( $i=$a;$i>=1;$i--){
@@ -120,7 +120,28 @@
     }
     //
     //bai_ve_tam_giac_1($a=5);
-      ?>
+
+    function bang_cuu_chuong_2_den_10($a){
+       
+        if($a<=10){
+            for($i=1;$i<=10;$i++){
+                echo "<br>";
+                for($n=1;$n<=$a;$n++){
+                echo $i." X ".$n." = ".$i*$n;
+                echo "<br>";
+                }
+            }
+        }else{
+            echo "so khong hop le.";
+        
+        }
+    }
+    
+    bang_cuu_chuong_2_den_10($a=10);
+
+?>
+
+
     <table>
         <tr>
             <th class="cong-ty">Công Ty</th>
