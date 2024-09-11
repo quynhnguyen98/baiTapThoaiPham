@@ -125,10 +125,12 @@
        
         if($a<=10 && $a >=1){
             for($i=1;$i<=10;$i++){
-                echo "<br>";
+                //echo "<br>";
                 for($n=1;$n<=$a;$n++){
-                    echo $n." X ".$i." = ".$n*$i." ";
+                    echo $n." X ".$i." = ".$n*$i;
+                    echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                 }
+                echo "<br>";
             }
         }else{
             echo "so khong hop le.";
@@ -136,8 +138,46 @@
         }
     }
     
-    bang_cuu_chuong_2_den_10($a=10);
+    //bang_cuu_chuong_2_den_10($a=10);
 
+    function mang(){
+        //hiển thị các phần tử từ trong mảng từ 1-20.
+        //lấy phần từ có giá trị là 13.
+        $mang = array();
+        // for($i = 1 ; $i <= 20 ; $i++){
+        //     $mang[] = $i;
+        // }
+        //echo $mang[6];
+        // foreach($mang as $key => $cac_gia_tri){
+        //     echo $key;
+        //     echo "<br>";
+        // }
+        $mang[] = "a";
+        $mang[] = "b";
+        $mang[] = "c";
+        $mang[] = "d";
+        $mang[] = "e";
+        $mang[] = "f";
+        $mang[] = "g";
+        $mang[] = "h";
+        $mang[] = "i";
+        $mang[] = "k";
+        $mang[] = "l";
+        $mang[] = "m";
+        echo $mang[6];
+    }
+    mang();
+
+        //nhập n xuất dsach n học sinh.
+        //vd: 1/hs1, 2/hs2.
+
+        //lấy hs n-1
+
+        //xuất dsach n phòng học.
+        //vd: 1/ph1, 2/ph2...
+
+        //xuất dsach hs theo phòng học.
+        //vd: ph1-hs1,ph2-hs2...
 ?>
 
 
