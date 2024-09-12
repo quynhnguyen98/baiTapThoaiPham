@@ -140,10 +140,10 @@
     
     //bang_cuu_chuong_2_den_10($a=10);
 
-    function mang(){
+    //function mang(){
         //hiển thị các phần tử từ trong mảng từ 1-20.
         //lấy phần từ có giá trị là 13.
-        $mang = array();
+        //$mang = array();
         // for($i = 1 ; $i <= 20 ; $i++){
         //     $mang[] = $i;
         // }
@@ -152,21 +152,21 @@
         //     echo $key;
         //     echo "<br>";
         // }
-        $mang[] = "a";
-        $mang[] = "b";
-        $mang[] = "c";
-        $mang[] = "d";
-        $mang[] = "e";
-        $mang[] = "f";
-        $mang[] = "g";
-        $mang[] = "h";
-        $mang[] = "i";
-        $mang[] = "k";
-        $mang[] = "l";
-        $mang[] = "m";
-        echo $mang[6];
-    }
-    mang();
+        // $mang[] = "a";
+        // $mang[] = "b";
+        // $mang[] = "c";
+        // $mang[] = "d";
+        // $mang[] = "e";
+        // $mang[] = "f";
+        // $mang[] = "g";
+        // $mang[] = "h";
+        // $mang[] = "i";
+        // $mang[] = "k";
+        // $mang[] = "l";
+        // $mang[] = "m";
+    //     echo $mang[6];
+    // }
+    // mang();
 
         //nhập n xuất dsach n học sinh.
         //vd: 1/hs1, 2/hs2.
@@ -176,8 +176,81 @@
         //xuất dsach n phòng học.
         //vd: 1/ph1, 2/ph2...
 
-        //xuất dsach hs theo phòng học.
+      
+                   // function xuat_dsach_hs(){
+        //     $xuat_dsach_hs = array();
+        //     $xuat_dsach_hs[] = "hs1";
+        //     $xuat_dsach_hs[] = "hs2";
+        //     $xuat_dsach_hs[] = "hs3";
+        //     $xuat_dsach_hs[] = "hs4";
+        //     $xuat_dsach_hs[] = "hs5";
+        //     $xuat_dsach_hs[] = "hs6";
+        //     $xuat_dsach_hs[] = "hs7";
+        //     $xuat_dsach_hs[] = "hs8";
+        //     $xuat_dsach_hs[] = "hs9";
+        //     $xuat_dsach_hs[] = "hs10";
+        // foreach ($xuat_dsach_hs as $key => $hs){
+        //     echo ++$key.": ".$hs;
+        //     echo "<br>";
+        // }
+        // }
+        
+        //xuat_dsach_hs();
+
+         //lấy hs n-1
+  
+         //xuất dsach n phòng học.
+        //vd: 1/ph1, 2/ph2...
+
+        function lay_hs($a){
+            $lay_hs = array();
+            for($i = 1 ; $i <= $a ; $i++){
+               $lay_hs[] = 1;
+               echo $a-1;
+               break;
+            }
+        }
+          //lay_hs($a=6);
+
+        //xuất dsach n phòng học.
+        //vd: 1/ph1, 2/ph2...
+    function xuat_ds_ph(){
+        $xuat_ds_ph = array();
+        $xuat_ds_ph[] = "ph1";
+        $xuat_ds_ph[] = "ph2";
+        $xuat_ds_ph[] = "ph3";
+        $xuat_ds_ph[] = "ph4";
+        $xuat_ds_ph[] = "ph5";
+        $xuat_ds_ph[] = "ph6";
+        $xuat_ds_ph[] = "ph7";
+        $xuat_ds_ph[] = "ph8";
+        foreach($xuat_ds_ph as $key => $dsach_ph){
+            echo ++$key."/ ".$dsach_ph;
+            echo "<br>";
+        }
+    }
+
+        //xuat_ds_ph();
+
+          //xuất dsach hs theo phòng học.
         //vd: ph1-hs1,ph2-hs2...
+    function hoc_sinh(){
+        $hoc_sinh = array();
+        $hoc_sinh[] = "anh a";
+        $hoc_sinh[] = "anh b";
+        $hoc_sinh[] = "anh c";
+        $hoc_sinh[] = "anh d";
+        $hoc_sinh[] = "anh e";
+        for($i = 1 ; $i <= 5 ; $i++){
+            echo "";
+             //echo "<br>";
+        }
+        foreach($hoc_sinh as $key => $hocsinh){
+            echo "phong hoc"." ".++$key.": co  ".$hocsinh;
+            echo "<br>";
+        }
+    }
+    hoc_sinh();
 ?>
 
 
