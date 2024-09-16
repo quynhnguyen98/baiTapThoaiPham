@@ -170,26 +170,24 @@
 
         //bai1: nhập n xuất dsach n học sinh.
         //vd: 1/hs1, 2/hs2.
-    function xuat_dsach_hs($a){
-        $xuat_dsach_hs = array();
+    function dsach_hs($a){
+        $dsach_hs = array();
         for($i = 1 ; $i <= $a ; $i++){
-            $xuat_dsach_hs[] = "hoc sinh" ; 
+            $dsach_hs[] = "hoc sinh ".$i ; 
         }
-        foreach($xuat_dsach_hs as $key => $hoc_sinh){
-            echo ++$key."/ ".$hoc_sinh;
+        foreach($dsach_hs as $key => $hoc_sinh){
+            echo $key."/ ".$hoc_sinh;
             echo "<br>";
         }
+        return $dsach_hs ;
     }
-    //xuat_dsach_hs($a=7);
+    //dsach_hs($a=10);
 
         //bai2: lấy hs n-1
     function lay_hs_ntru1($a){
-       $lay_hs_ntru1 = array($a);
-        for($i = 1 ; $i <= 10 ; $i++){
-            $lay_hs_ntru1[] = "hoc sinh"." ".$i;     
-        }
-        if($a > 0 && $a <= 10){
-            $hocsinh = $lay_hs_ntru1[$a-1];
+        $dsach_hs = dsach_hs($a);
+        if($a > 0 && $a > $a-1){
+            $hocsinh = $dsach_hs[$a-1];
             echo $hocsinh;
         }
         else{
@@ -201,7 +199,7 @@
         // }
        }
        
-    //lay_hs_ntru1($a=6);
+    //lay_hs_ntru1($a=3);
     
         //bai3: xuất dsach n phòng học.
         //vd: 1/ph1, 2/ph2...
@@ -230,8 +228,10 @@
             echo $hsph;
             echo  "<br>";
         }
+        $xuat_thong_tin_hs5 = $xuat_dsach_hs_theo_ph[4];
+        echo $xuat_thong_tin_hs;
     }
-    xuat_dsach_hs_theo_ph();
+    //xuat_dsach_hs_theo_ph();
 ?>
 
 
