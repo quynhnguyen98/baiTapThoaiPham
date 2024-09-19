@@ -232,6 +232,123 @@
         echo $xuat_thong_tin_hs;
     }
     //xuat_dsach_hs_theo_ph();
+
+    
+    // b1: tìm số lớn nhất trong mảng
+function tim_so_lon_nhat(){
+    $tim_so_lon_nhat = array(12,8,33,4);
+    $max = 0;
+    if(12 >= $max)
+        $max = 12;
+    if(44 >= $max)
+        $max = 8;
+    if(33 >= $max)
+        $max = 33;
+    if(4 >= $max)
+        $max = 4;
+    echo "so lon nhat la: ".$max;
+    echo "<br>";
+}
+
+//tim_so_lon_nhat();
+
+function fix_sap_xep_tang_dan($params = array()){
+    // 5-9-12-24-32-41
+    $n = count($params);
+    
+    for($i = 0 ; $i < $n - 1 ; $i++){
+        for($j = 0; $j < $n - 1 - $i; $j++){
+            if($params[$j] > $params[$j+1]){
+                $temp = $params[$j];
+                $params[$j] = $params[$j+1];
+                $params[$j+1] = $temp;
+            }
+        }
+    }
+    
+    foreach($params as $so){
+        echo $so."\n";
+    }
+}
+//fix_sap_xep_tang_dan(array(8,1,6,21,7,22));
+    // b2: tìm số nhỏ nhất trong mảng
+function tim_so_nho_nhat(){
+    $tim_so_nho_nhat = array(44,4,1,33);
+    $min = 100;
+    if(44 <= $min)
+    $min = 44;
+    if(4 <= $min)
+    $min = 4;
+    if(1 <= $min)
+    $min = 1;
+    if(33 <= $min)
+    $min = 33;
+    echo "so nho nhat la: ".$min;
+}
+
+//tim_so_nho_nhat();
+
+function fix_tim_so_lon_nhat($params = array()){
+    $max = $params[0];
+    for($i = 0 ; $i <= count($params)-1 ; $i++){
+        if($max < $params[$i])
+            $max = $params[$i];
+    }
+    echo $max;
+}
+
+//fix_tim_so_lon_nhat(array(2,5,2,6,22,66,22,99));
+
+    //b3: xắp xếp mảng tăng dần
+function mang_tang_dan(){
+    $mang_tang_dan = array(2,5,1,7,4,8,3);
+    //count dùng để đếm các phần tử có tron mảng.
+    for($i = 0 ; $i < count($mang_tang_dan) ; $i++){
+        for($n = 0 ; $n < count($mang_tang_dan) -1 -$i ; $n++){
+            if ($mang_tang_dan[$n] > $mang_tang_dan[$n+1]){
+                $hoandoi = $mang_tang_dan[$n];
+                $mang_tang_dan[$n] = $mang_tang_dan[$n+1];
+                $mang_tang_dan[$n+1] = $hoandoi;
+            }
+        }
+    }
+    foreach($mang_tang_dan as $doi){
+        echo $doi." ";
+    }
+}
+
+//mang_tang_dan();
+
+    // b4: xắp xếp mảng giảm dần
+function mang_giam_dan($params = array()){
+    $n = count($params);
+    for($i = 0 ; $i <= $n-1 ;$i++ ){
+        for($a = 0 ; $a <= $n-1 -1 ; $a++){
+            if($params[$a] < $params[$a+1]){
+                $temp = $params[$a+1];
+                $params[$a+1] = $params[$a];
+                $params[$a] = $temp;
+            }
+        }
+    }
+    foreach($params as $xapxep){
+        echo $xapxep;
+        echo "<br>";
+    }
+}
+
+//mang_giam_dan(array(2,5,51,9,6,11,21));
+
+function mang_nho_nhat($params = array()){
+    $min = $params[0];
+    $n = count($params);
+    for($i = 0 ; $i <= $n-1 ; $i++ ){
+      if($min > $params[$i])
+        $min = $params[$i];
+    }
+    echo $min;
+}
+mang_nho_nhat(array(21,5,7,66,2,55));
 ?>
 
 
