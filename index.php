@@ -332,12 +332,32 @@ function mang_giam_dan($params = array()){
         }
     }
     foreach($params as $xapxep){
-        echo $xapxep;
-        echo "<br>";
+        echo $xapxep." ";
+        
     }
 }
 
-//mang_giam_dan(array(2,5,51,9,6,11,21));
+function fix_sap_xep_giam_dan($params = array()){
+    // 5-9-12-24-32-41
+    $n = count($params);
+    
+    for($i = 0 ; $i < $n - 1 ; $i++){
+        for($j = 0; $j < $n - 1 - $i; $j++){
+            if($params[$j] < $params[$j+1]){
+                $temp = $params[$j];
+                $params[$j] = $params[$j+1];
+                $params[$j+1] = $temp;
+            }
+        }
+    }
+    
+    foreach($params as $so){
+        echo $so."\n";
+    }
+}
+
+//fix_sap_xep_giam_dan(array(2,5,51,9,6,100,11,21,99));
+//mang_giam_dan(array(2,5,51,9,6,100,11,21,99));
 
 function mang_nho_nhat($params = array()){
     $min = $params[0];
@@ -348,11 +368,19 @@ function mang_nho_nhat($params = array()){
     }
     echo $min;
 }
-mang_nho_nhat(array(21,5,7,66,2,55));
+//mang_nho_nhat(array(21,5,7,0,66,2,55));
+
+//hằng 
+define("TEN","Quynh");
+echo "toi ten la ".TEN;
+echo "<br>";
+define("PI","3.14");
+echo PI ;
+
 ?>
 
 
-    <table>
+    <!-- <table>
         <tr>
             <th class="cong-ty">Công Ty</th>
             <th class="dia-chi">Địa chỉ</th>
@@ -368,7 +396,7 @@ mang_nho_nhat(array(21,5,7,66,2,55));
             <td>chú rể mặc vét đen</td>
             <td>Nguyễn Mạnh Quỳnh</td>
         </tr>
-    </table>
+    </table> -->
 
 </body>
 
