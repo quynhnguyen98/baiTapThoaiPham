@@ -372,12 +372,170 @@ function mang_nho_nhat($params = array()){
 
 //hằng 
 define("TEN","Quynh");
-echo "toi ten la ".TEN;
+//echo "toi ten la ".TEN;
 echo "<br>";
 define("PI","3.14");
-echo PI ;
+//echo PI ;
+/*
+ b1: cho array them phan tu vao array co key la gioi tinh co gia tri la nam
+ array(
+    'name' => 'Nguyễn Tình A',
+    'class'=> 'IT',
+    'position' => 'BOSS'
+
+b2: lay gia tri cua key name
+     array(
+    'name' => 'Nguyễn Tình A',
+    'class'=> 'IT',
+    'position' => 'BOSS'
+
+b3: thay doi gia tri key cua name la nguyen van b
+name' => 'Nguyễn Tình B',
+
+b4: xuat het thong tin cua array
+
+b5: cho array bat ky.tinh tong array
+vd: array(1,2,3);
+kq = 6
+
+b6: cho array bat ky. in ds so chan va dem co bn phan tu chan .
+vd: array(1,2,3,4,5);
+kq: array(2,4);
+
+b7: in ds so le.in ds so le va dem co bn phan tu le.
+vd: array(1,2,3,4,5);
+kq: 1,3,5
+ */
+
+// b1: cho array them phan tu vao array co key la gioi tinh co gia tri la nam
+// array(
+//    'name' => 'Nguyễn Tình A',
+//    'class'=> 'IT',
+//    'position' => 'BOSS'
+function tao_arr(){
+    $tao_arr = array("gioi_tinh" => "nam ","name"=>" Nguyễn Tình A","class" => " IT","position" => "boss" );
+    foreach($tao_arr as $key => $value){
+        echo $key.": ".$value;
+        echo "<br>";
+    }
+}
+
+function fix_tao_arr(){
+    $tao_arr = array("name"=>" Nguyễn Tình A","class"=>" IT",10=>"boss","boss"=>2 );
+    $tao_arr["ma_lop_hoc"] = 123;
+    echo $tao_arr[10];
+    $tao_arr[] = 3;
+    $tao_arr["boss"] = 9;
+    foreach($tao_arr as $key => $value){
+        echo "{$key}=>{$value}<br>";
+    }
+
+    $tao_arr_moi = $tao_arr;
+    $tao_arr_moi[11] = 4;
+    $tao_arr_moi["ma_lop_hoc"] = 456;
+    foreach($tao_arr_moi as $key => $value){
+        echo "{$key}=>{$value}<br>";
+    }
+}
+
+/*
+2 => nguyen tinh a
+3 => it
+position = boss
+4 => 2
+5 => 1
+msv => 12345
+ */
+
+fix_tao_arr();
+//tao_arr();
+
+    // b2: lay gia tri cua key name
+    //      array(
+    //     'name' => 'Nguyễn Tình A',
+    //     'class'=> 'IT',
+    //     'position' => 'BOSS'
+function arr(){
+    $arr = array("gioi_tinh" => "nam ","name"=>" Nguyễn Tình A","class" => " IT","position" => "boss" );
+   echo $arr["name"];
+}
+
+//arr();
+
+    // b3: thay doi gia tri key cua name la nguyen van b
+    // name' => 'Nguyễn Tình B',
+function doi_gia_tri(){
+    $doi_gia_tri = array("gioi_tinh" => "nam ","name"=>" Nguyễn Tình B","class" => " IT","position" => "boss" );
+    foreach($doi_gia_tri as $value){
+        echo $value."<br> ";
+    }
+}
+
+//doi_gia_tri();
+
+
+    // b4: xuat het thong tin cua array
+
+function xuat_het_thong_tin(){
+    $xuat_het_thong_tin = array("gioi_tinh" => "nam ","name"=>" Nguyễn Tình A","class" => " IT","position" => "boss" );
+    foreach($xuat_het_thong_tin as $key => $value){
+        echo $key.": ".$value;
+        echo "<br>";
+    }
+}
+//xuat_het_thong_tin();
+
+    // b5: cho array bat ky.tinh tong array
+    // vd: array(1,2,3);
+    // kq = 6
+function tinh_tong_arr($tinh_tong = array()){
+    $max = 0 ;
+    foreach($tinh_tong as $value){
+        $max += $value;
+    }
+    echo "tong cua array la: ". $max;
+}
+
+//tinh_tong_arr(array(2,4,10));
+
+    // b6: cho array bat ky. in ds so chan va dem co bn phan tu chan .
+    // vd: array(1,2,3,4,5);
+    // kq: array(2,4);
+function so_chan_va_dem($so_chan_va_dem = array()){
+    $so_chan = array() ;
+    $dem_so_chan = 0 ;
+    foreach($so_chan_va_dem as $value){
+        if($value % 2 == 0){
+            echo $value." ";
+            $dem_so_chan++;
+        }
+    }
+    echo "<br>";
+    echo "co: ".$dem_so_chan." so chan" ;
+}
+//so_chan_va_dem(array(1,2,3,4,5,6));
+
+    // b7: in ds so le.in ds so le va dem co bn phan tu le.
+    // vd: array(1,2,3,4,5);
+    // kq: 1,3,5
+    //  */
+function so_le_va_dem($so_le_va_dem = array()){
+    $so_le = array();
+    $dem_so_le = 0;
+    foreach($so_le_va_dem as $value){
+        if($value % 2 != 0){
+            echo $value." ";
+            $dem_so_le++;
+        }
+    }
+    echo "<br>";
+    echo "co: ".$dem_so_le." so le ";
+}
+
+//so_le_va_dem(array(1,2,3,4,5,6,7));
 
 ?>
+
 
 
     <!-- <table>
