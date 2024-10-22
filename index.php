@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>baitap</title>
     <link rel="stylesheet" href="asset/css/style.css">
-</head>
 
 <body>
     <?php 
@@ -488,74 +487,79 @@ function xuat_het_thong_tin(){
     // b5: cho array bat ky.tinh tong array
     // vd: array(1,2,3);
     // kq = 6
-function tinh_tong_arr($tinh_tong = array()){
-    $max = 0 ;
-    foreach($tinh_tong as $value){
-        $max += $value;
+function tinh_tong_arr($params = array()){
+    $tong = 0 ;
+    foreach($params as $key =>$value){
+        $tong += $key;
     }
-    echo "tong cua array la: ". $max;
+    echo "tong cua array la: ". $tong;
 }
 
-//tinh_tong_arr(array(2,4,10));
+// tinh_tong_arr(array(2,4,10));
 
     // b6: cho array bat ky. in ds so chan va dem co bn phan tu chan .
     // vd: array(1,2,3,4,5);
     // kq: array(2,4);
-function so_chan_va_dem($so_chan_va_dem = array()){
-    $so_chan = array() ;
-    $dem_so_chan = 0 ;
-    foreach($so_chan_va_dem as $value){
-        if($value % 2 == 0){
-            echo $value." ";
-            $dem_so_chan++;
-        }
-    }
-    echo "<br>";
-    echo "co: ".$dem_so_chan." so chan" ;
-}
-//so_chan_va_dem(array(1,2,3,4,5,6));
-
-    // b7: in ds so le.in ds so le va dem co bn phan tu le.
-    // vd: array(1,2,3,4,5);
-    // kq: 1,3,5
-    //  */
-function so_le_va_dem($so_le_va_dem = array()){
-    $so_le = array();
-    $dem_so_le = 0;
-    foreach($so_le_va_dem as $value){
+function so_chan_le_va_tinh_tong($params = array()){
+    $tong_so_chan= 0 ;
+    $tong_so_le = 0;
+    $ds_so_le = array();
+    $ds_so_chan = array();
+    foreach($params as $value){
+        // if($value % 2 == 0){
+        //     $ds_so_chan[] = $value;
+        //     $tong_so_chan += $value;//$tong_so_chan = $tong_so_chan + $value
+        // }
+        // else {
+        //    $ds_so_le[] = $value;
+        //    $tong_so_le += $value;
+        //} 
         if($value % 2 != 0){
-            echo $value." ";
-            $dem_so_le++;
+            $ds_so_le[] = $value;
+            $tong_so_le += $value;
+        }
+        else{
+            $ds_so_chan[] = $value;
+            $tong_so_chan += $value;
         }
     }
+    echo "ds so chan la: ".implode(" ", $ds_so_chan);
     echo "<br>";
-    echo "co: ".$dem_so_le." so le ";
+    echo "ds so le la: ".implode(",", $ds_so_le);
+    // foreach($ds_so_chan as $value){
+    //     echo $value ."<br>";
+    // }
+    // echo $tong_so_chan."<br>";
+    // foreach($ds_so_le as $value){
+    //     echo $value."<br>";
+    // }
+    // echo $tong_so_le."<br>";    
+
+}
+so_chan_le_va_tinh_tong(array(1,2,3,4,5,6));
+
+    // b2: lay gia tri cua key name
+    //      array(
+    //     'name' => 'Nguyễn Tình A',
+    //     'class'=> 'IT',
+    //     'position' => 'BOSS
+
+function lay_gia_tri(){
+    $ds_phan_tu = array("name"=>" Nguyễn Tình A","class" => " IT","position" => "boss" );
+
+    echo $ds_phan_tu["name"];
+}
+//lay_gia_tri();
+
+    // b3: thay doi gia tri key cua name la nguyen van b
+    // name' => 'Nguyễn Tình B',
+function thay_doi_gia_tri(){
+    $ds_gia_tri = array("name"=>" Nguyễn Tình A","class" => " IT","position" => "boss" );
+    $ds_gia_tri["name"] = "Nguyễn Tình B";
+    foreach($ds_gia_tri as $key => $value){
+        echo "{$key}=>{$value}<br>";
+    }
 }
 
-//so_le_va_dem(array(1,2,3,4,5,6,7));
 
 ?>
-
-
-
-    <!-- <table>
-        <tr>
-            <th class="cong-ty">Công Ty</th>
-            <th class="dia-chi">Địa chỉ</th>
-            <th class="thanh-pho">Thành phố</th>
-        </tr>
-        <tr>
-            <td>Công ty a</td>
-            <td>Biên Hòa</td>
-            <td>Đông Nai</td>
-        </tr>
-        <tr>
-            <td><img src="asset/images/anhquynh.jpg" alt="anh quỳnh ghgjhgjh"></td>
-            <td>chú rể mặc vét đen</td>
-            <td>Nguyễn Mạnh Quỳnh</td>
-        </tr>
-    </table> -->
-
-</body>
-
-</html>
