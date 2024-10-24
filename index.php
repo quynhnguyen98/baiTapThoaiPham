@@ -446,7 +446,7 @@ position = boss
 msv => 12345
  */
 
-fix_tao_arr();
+//fix_tao_arr();
 //tao_arr();
 
     // b2: lay gia tri cua key name
@@ -536,7 +536,7 @@ function so_chan_le_va_tinh_tong($params = array()){
     // echo $tong_so_le."<br>";    
 
 }
-so_chan_le_va_tinh_tong(array(1,2,3,4,5,6));
+//so_chan_le_va_tinh_tong(array(1,2,3,4,5,6));
 
     // b2: lay gia tri cua key name
     //      array(
@@ -561,5 +561,30 @@ function thay_doi_gia_tri(){
     }
 }
 
+//bai tap mang 2 chieu.
+$arr = array(
+    array(array("cho_con", "cho_meo"), array("cai_trung", "con_ga"))
+);
+foreach($arr as $value){
+    foreach($value as $gia_tri){
+        foreach($gia_tri as $gia_tri1){
+            echo $gia_tri1;
+        }
+    }
+}
+
+// foreach($arr[0] as $value){
+//     echo $value;
+// }
+// foreach($arr[1] as $value){
+//     echo $value;
+// }
+// foreach($arr[2] as $value){
+//     echo $value;
+// }
+//$arr_1 = array(1,2,3,4,5,6,7,8,9);
+// foreach($arr_1 as $key => $value){
+//     echo $key;
+// }
 
 ?>
