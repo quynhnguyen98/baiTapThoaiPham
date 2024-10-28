@@ -561,18 +561,22 @@ function thay_doi_gia_tri(){
     }
 }
 
-//bai tap mang 2 chieu.
+//mang 1 chieu
+// $arr = array("A" => 1, "B" => 2, 3);
+// $arr[] = "D";
+// foreach($arr as $key => $value){
+//     if($value == "D"){
+//         unset($arr[$key]);
+//         $arr["D"] = 4;
+//     }
+// }
+// foreach($arr as $key => $value){
+//     echo $key." ".$value;
+// }
 $arr = array(
-    array(array("cho_con", "cho_meo"), array("cai_trung", "con_ga"))
+    array(1,2,3), array(4,5,6)
 );
-foreach($arr as $value){
-    foreach($value as $gia_tri){
-        foreach($gia_tri as $gia_tri1){
-            echo $gia_tri1;
-        }
-    }
-}
-
+echo $arr[0][2];
 // foreach($arr[0] as $value){
 //     echo $value;
 // }
@@ -587,4 +591,15 @@ foreach($arr as $value){
 //     echo $key;
 // }
 
+/*
+b1: 1 2 3 = 6
+    4 5 6 = 15
+    7 8 9 = 24
+tinh tong cua tung dong
+xuat ra man hinh    1 2 3  
+                    4 5 6 
+                    7 8 9  
+tim so lon nhat = 9
+);
+ */
 ?>
